@@ -15,19 +15,15 @@ void searchEmployees(Employee[], int, int (*compare)(Employee, void*), void*);
 int searchByID(Employee emp, void* key) {
     return emp.IDnumber == *(int*)key;
 }
-
 int searchByName(Employee emp, void* key) {
     return strcmp(emp.name, (char*)key) == 0;
 }
-
 int searchByPhoneNumber(Employee emp, void* key) {
     return strcmp(emp.phoneNumber, (char*)key) == 0;
 }
-
 int searchBySalary(Employee emp, void* key) {
     return emp.salary == *(double*)key;
 }
-
 void searchEmployees(Employee employees[], int size, int (*compare)(Employee, void*), void* key) {
 	int found = 0;
 	for (int i = 0; i < size; i++) {
